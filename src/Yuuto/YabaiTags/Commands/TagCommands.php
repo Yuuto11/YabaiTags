@@ -33,10 +33,10 @@ class TagCommands extends PluginCommand{
 
 	public function __construct($name, Main $plugin) {
         parent::__construct($name, $plugin);
-        $this->setDescription("HestiaPE Tags");
+        $this->setDescription("YabaiTags Plugin");
         $this->setUsage("/tag");
 		$this->setAliases(["tags"]);		
-        $this->setPermission("command.tag");
+        $this->setPermission("yabai.tag");
 		$this->plugin = $plugin;
     }
 
@@ -47,7 +47,7 @@ class TagCommands extends PluginCommand{
      * @return bool
      */
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
-		if (!$sender->hasPermission("command.tag")) {
+		if (!$sender->hasPermission("yabai.tag")) {
 			$sender->sendMessage(TextFormat::RED . "You do not have permission to use this command");
 			return false;
 		}
@@ -88,7 +88,7 @@ class TagCommands extends PluginCommand{
 			break;			
 		    }
 		});
-		$form->setTitle(TextFormat::BOLD . TextFormat::GREEN . "Tags");
+		$form->setTitle(TextFormat::BOLD . TextFormat::BLUE . "Yabbai Tags");
 		$form->setContent(TextFormat::AQUA . "Select tags");
 		$form->addButton(TextFormat::GREEN . "§cExample§6#1");	
 		$form->addButton(TextFormat::GREEN . "§dExample§b#2");	
